@@ -1,0 +1,19 @@
+{
+  "isPlaying": true,
+  "song": {
+    "id": 473403182,
+    "name": "恋ひ恋ふ縁",
+    "artists": "Famishin / KOTOKO",
+    "album": "千恋＊万花 オリジナル・サウンドトラック",
+    "durationMs": 237644
+  },
+  "playbackUrl": "http://m7.music.126.net/20260611185245/23f0c713366333d3a61a11b202cc5cc7/ymusic/0553/005b/030f/2980ed704171401310654ea1f5b2e99b.mp3?vuutv=9VfK9fegEC34gHg1niCGxhM2IRs+RI5h9MHT4nlOCdXYGrZ317wa7TCdRf6Qav8rhbAFrgjNP1YP0VftVDhrrJX1NpStk+NTaWyOypnC8ix/vdWZ13ko0PgxOHc6NSqLaKszre3so8R78EXO845yE/IRPq9W9tm/U2to/+Qw1n0=",
+  "urlInfo": {
+    "url": "http://m7.music.126.net/20260611185245/23f0c713366333d3a61a11b202cc5cc7/ymusic/0553/005b/030f/2980ed704171401310654ea1f5b2e99b.mp3?vuutv=9VfK9fegEC34gHg1niCGxhM2IRs+RI5h9MHT4nlOCdXYGrZ317wa7TCdRf6Qav8rhbAFrgjNP1YP0VftVDhrrJX1NpStk+NTaWyOypnC8ix/vdWZ13ko0PgxOHc6NSqLaKszre3so8R78EXO845yE/IRPq9W9tm/U2to/+Qw1n0=",
+    "level": "exhigh",
+    "type": "mp3",
+    "size": 9508615,
+    "br": 320000,
+    "code": 200
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "apiBaseUrl": "http://127.0.0.1:3000",
+  "timeoutSeconds": 12,
+  "proxy": "",
+  "cookie": "",
+  "defaultLimit": 5,
+  "defaultQuality": "exhigh",
+  "openPlaybackUrl": true
+}

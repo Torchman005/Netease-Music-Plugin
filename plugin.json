@@ -1,0 +1,151 @@
+{
+  "schemaVersion": "yuyu.plugin.v1",
+  "name": "netease_music",
+  "displayName": "网易云音乐",
+  "description": "Control NetEase Cloud Music through a local NeteaseCloudMusicApi Enhanced service.",
+  "version": "0.1.0",
+  "author": "Yuyu-Mind",
+  "enabled": true,
+  "entry": "main.py",
+  "permissions": [
+    "network.music",
+    "system.open_url"
+  ],
+  "context": {
+    "modes": {
+      "chat": {
+        "enabled": true,
+        "action": "control",
+        "priority": 25,
+        "prompt": "Use the local NetEase Cloud Music API to handle the user's music request.",
+        "triggers": [
+          "网易云",
+          "网易云音乐",
+          "音乐",
+          "歌曲",
+          "播放",
+          "放一首",
+          "听歌",
+          "搜歌",
+          "找歌",
+          "歌词",
+          "暂停音乐",
+          "停止音乐",
+          "继续播放",
+          "music",
+          "netease",
+          "song",
+          "play music",
+          "lyrics"
+        ],
+        "demonstratives": [
+          "这首",
+          "这个",
+          "this"
+        ],
+        "targets": [
+          "歌",
+          "音乐",
+          "歌曲",
+          "歌词",
+          "song",
+          "music",
+          "lyrics"
+        ]
+      }
+    }
+  },
+  "defaultConfig": {
+    "apiBaseUrl": "http://127.0.0.1:3000",
+    "timeoutSeconds": 12,
+    "proxy": "",
+    "cookie": "",
+    "defaultLimit": 5,
+    "defaultQuality": "exhigh",
+    "openPlaybackUrl": true
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "apiBaseUrl": {
+        "type": "string",
+        "description": "Local NeteaseCloudMusicApi Enhanced base URL, for example http://127.0.0.1:3000."
+      },
+      "timeoutSeconds": {
+        "type": "integer",
+        "minimum": 3,
+        "maximum": 60
+      },
+      "proxy": {
+        "type": "string",
+        "description": "Optional HTTP/HTTPS proxy for the API service."
+      },
+      "cookie": {
+        "type": "string",
+        "secret": true,
+        "description": "Optional NetEase cookie. Empty means fallback to YUYU_NETEASE_COOKIE or NETEASE_COOKIE."
+      },
+      "defaultLimit": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 20
+      },
+      "defaultQuality": {
+        "type": "string",
+        "description": "Song URL quality level, for example standard, higher, exhigh, lossless, hires."
+      },
+      "openPlaybackUrl": {
+        "type": "boolean",
+        "description": "Open the resolved song URL with the OS default handler when playing."
+      }
+    }
+  },
+  "actions": [
+    {
+      "name": "control",
+      "description": "Search, play, show lyrics, or manage plugin playback state for NetEase Cloud Music.",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Original user message."
+          },
+          "query": {
+            "type": "string",
+            "description": "Song keyword or command."
+          },
+          "intent": {
+            "type": "string",
+            "description": "Optional explicit intent: search, play, lyric, pause, resume, stop, status."
+          },
+          "songId": {
+            "type": "integer",
+            "description": "Optional NetEase song ID."
+          }
+        }
+      },
+      "outputSchema": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "ok",
+          "summary"
+        ]
+      }
+    }
+  ]
+}
